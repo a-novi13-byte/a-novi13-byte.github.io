@@ -1,0 +1,13 @@
+title: Alexei Hoffman
+description: "Research and writing on aerospace, defense, and geopolitical risk, with a focus on how threat assessments, acquisition policy, and great-power competition shape strategic outcomes across Eurasia and the Indo-Pacific."
+baseurl: ""
+url: "https://a-novi13-byte.github.io"
+author: Alexei Hoffman
+
+markdown: kramdown
+permalink: pretty
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
