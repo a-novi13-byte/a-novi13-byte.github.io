@@ -65,6 +65,7 @@ img { max-width: 100%; display: block; }
 .badge-choice { background: #c0392b; color: #fff; } .badge-worldbank { background: #002244; color: #fff; }
 .badge-nwc { background: #003366; color: #d4af37; } .badge-sdstate { background: #0033A0; color: #FFD100; }
 .badge-nato { background: #004990; color: #fff; }
+.badge-tedstevens { background: #b8d8e8; color: #0a2540; }
 
 .conf-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 1rem; }
 .conf-table thead th { text-align: left; font-weight: 500; font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); padding: 0.65rem 1rem; border-bottom: 2px solid var(--navy); background: var(--bg-alt); }
