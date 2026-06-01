@@ -69,6 +69,10 @@ img { max-width: 100%; display: block; }
 .badge-yjia { background: #00356B; color: #f4ecd0; }
 .badge-ijts { background: #B22234; color: #fff; }
 
+/* Publication cover thumbnails — replaces the old text badges in the Publications table */
+.pub-cover { width: 72px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 auto; border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
+.pub-table tbody td:last-child { text-align: center; }
+
 .conf-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin-top: 1rem; }
 .conf-table thead th { text-align: left; font-weight: 500; font-size: 0.76rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); padding: 0.65rem 1rem; border-bottom: 2px solid var(--navy); background: var(--bg-alt); }
 .conf-table tbody td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border); vertical-align: top; }
