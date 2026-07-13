@@ -68,6 +68,7 @@ img { max-width: 100%; display: block; }
 .badge-tedstevens { background: #b8d8e8; color: #0a2540; }
 .badge-yjia { background: #00356B; color: #f4ecd0; }
 .badge-ijts { background: #B22234; color: #fff; }
+.badge-guanxi { background: #1a3c8a; color: #fff; }
 
 /* Publication cover thumbnails — replaces the old text badges in the Publications table */
 .pub-cover { width: 72px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 auto; border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
