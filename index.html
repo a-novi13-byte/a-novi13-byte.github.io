@@ -7,22 +7,25 @@ title: Home
 .hero-langs { font-size: 0.92rem; font-weight: 600; color: rgba(255,255,255,0.95); letter-spacing: 0.1em; margin-top: -0.3rem; margin-bottom: 0.6rem; text-shadow: 0 1px 10px rgba(0,0,0,0.6); }
 .hero-banner { aspect-ratio: 4.5 / 1; height: auto; }
 .hero-banner img { object-position: center 45%; }
+.hero-credit { margin: 0.45rem 0 0; padding: 0 1.75rem; font-size: 0.78rem; color: var(--text-muted); text-align: right; }
 @media (max-width: 768px) {
   .hero-banner { aspect-ratio: auto; height: 240px; }
-  .hero-banner img { object-position: 25% 45%; }
+  .hero-banner img { object-position: center bottom; }
+  .hero-credit { font-size: 0.72rem; padding: 0 1rem; }
 }
 </style>
 <section class="hero-banner">
-  <!-- Banner: U.S. Air Force photo by Airman 1st Class Gracelyn Hess (DVIDS, public domain) — 1st Special Operations Support Squadron Mission Sustainment Team with an MQ-9 Reaper, Melrose Air Force Range, N.M., Dec. 16, 2024 (Exercise Reaper Castillo). Sky extended right via generative fill. -->
-  <img src="{{ 'assets/images/Alexei-0923.png' | relative_url }}" alt="A U.S. Air Force Airman gives a thumbs-up while watching an MQ-9 Reaper unmanned aircraft in flight.">
+  <!-- Banner: untitled ballpoint pen drawing by the site author, September 2023. -->
+  <img src="{{ 'assets/images/Alexei-0923.png' | relative_url }}" alt="Ballpoint pen drawing of a helmeted soldier watching through binoculars from a rooftop, a radio antenna at his shoulder, looking across farmland toward a distant town with domed churches.">
   <div class="hero-banner-overlay">
     <div class="hero-banner-inner">
       <h1>Alexei Hoffman</h1>
       <p class="hero-langs">EN/RU/中文</p>
-      <p class="hero-subtitle">Research Associate<br>Aerospace Security Project<br>Center for Strategic and International Studies</p>
+      <p class="hero-subtitle">Unmanned Systems & Airpower<br>Eurasia<br>
     </div>
   </div>
 </section>
+<p class="hero-credit">Ballpoint pen on paper, September 2023. Drawing by the author.</p>
 <section class="about-section">
   <h2 class="about-heading">About</h2>
   <p>Alexei Hoffman is a Research Associate with the Aerospace Security Project at the Center for Strategic and International Studies (CSIS), where he focuses on unmanned systems and military airpower. A first-generation American of Russian and Kazakh descent, he brings linguistic fluency in Russian and Mandarin to his analysis of how threat environments, acquisition priorities, and alliance structures shape the aerospace and defense landscape across Eurasia and the Indo-Pacific.</p>
