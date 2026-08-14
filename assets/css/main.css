@@ -58,17 +58,34 @@ img { max-width: 100%; display: block; }
 .pub-coauthor { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.25rem; }
 .pub-venue { font-style: italic; color: var(--text); }
 .pub-year { font-variant-numeric: tabular-nums; color: var(--text-muted); white-space: nowrap; }
+
+/* ---- BADGES ----------------------------------------------------------
+   One ramp, CSIS navy to CSIS blue, ordered by venue weight.
+   Every fill passes WCAG AA against white text.
+   New outlet: assign it an existing step. Don't add hex values. */
+
 .pub-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }
-.badge-gssr { background: #1a3a5c; color: #fff; } .badge-milrev { background: #3d5a2a; color: #fff; }
-.badge-citadel { background: #1c3f6e; color: #d4c6a0; } .badge-csis { background: #003366; color: #fff; }
-.badge-isw { background: #8B0000; color: #fff; } .badge-isd { background: #1a1a2e; color: #e0d5c1; }
-.badge-choice { background: #c0392b; color: #fff; } .badge-worldbank { background: #002244; color: #fff; }
-.badge-nwc { background: #003366; color: #d4af37; } .badge-sdstate { background: #0033A0; color: #FFD100; }
-.badge-nato { background: #004990; color: #fff; }
-.badge-tedstevens { background: #b8d8e8; color: #0a2540; }
-.badge-yjia { background: #00356B; color: #f4ecd0; }
-.badge-ijts { background: #B22234; color: #fff; }
-.badge-guanxi { background: #1a3c8a; color: #fff; }
+
+/* Step 1 — 14.9:1 */
+.badge-csis, .badge-worldbank { background: #0A2458; color: #fff; }
+
+/* Step 2 — 12.6:1 */
+.badge-isd, .badge-nato, .badge-citadel, .badge-nwc { background: #123168; color: #fff; }
+
+/* Step 3 — 7.5:1 */
+.badge-isw, .badge-milrev, .badge-yjia, .badge-gssr { background: #0054A4; color: #fff; }
+
+/* Step 4 — 5.1:1 */
+.badge-choice, .badge-ijts, .badge-sdstate, .badge-tedstevens { background: #1A6FC4; color: #fff; }
+
+/* Step 5 — outline. inset shadow keeps padding identical to filled badges. */
+.badge-guanxi { background: transparent; color: #0A2458; box-shadow: inset 0 0 0 1px #0A2458; }
+
+/* Media page formats — same ramp, separate page, no collisions. */
+.badge-panel { background: #0A2458; color: #fff; }
+.badge-podcast { background: #0054A4; color: #fff; }
+.badge-broadcast { background: #1A6FC4; color: #fff; }
+.badge-quoted { background: transparent; color: #0A2458; box-shadow: inset 0 0 0 1px #0A2458; }
 
 /* Publication cover thumbnails — replaces the old text badges in the Publications table */
 .pub-cover { width: 72px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 auto; border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
@@ -87,6 +104,10 @@ img { max-width: 100%; display: block; }
 .writing-content h3 { font-family: var(--font-display); font-size: 1.12rem; font-weight: 600; line-height: 1.35; margin-bottom: 0.3rem; }
 .writing-content h3 a { color: var(--navy); } .writing-content h3 a:hover { color: var(--accent-dark); }
 .writing-content .writing-blurb { font-size: 0.85rem; color: var(--text-muted); line-height: 1.6; }
+
+/* ---- MEDIA PAGE ---- */
+.media-venue { font-size: 0.82rem; color: var(--text-muted); margin: 0.1rem 0 0.45rem; }
+.event-status { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; background: #3DD5FF; color: #0A2458; border-radius: 3px; }
 
 .cv-actions { margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.4rem; background: var(--navy); color: #fff; font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 3px; transition: all 0.2s; text-decoration: none; }
@@ -122,6 +143,6 @@ img { max-width: 100%; display: block; }
   .conf-table, .conf-table thead, .conf-table tbody, .conf-table th, .conf-table td, .conf-table tr { display: block; }
   .conf-table thead { display: none; } .conf-table tbody td { padding: 0.3rem 0; border: none; }
   .conf-table tbody td:first-child { padding-top: 1rem; } .conf-table tbody td:last-child { padding-bottom: 1rem; border-bottom: 1px solid var(--border); }
-  .writing-item { grid-template-columns: 1fr; } .writing-meta { flex-direction: row; align-items: center; }
+  .writing-item { grid-template-columns: 1fr; } .writing-meta { flex-direction: row; align-items: center; flex-wrap: wrap; }
   .contact-layout { grid-template-columns: 1fr; } .contact-photo { width: 160px; margin: 0 auto; }
 }
