@@ -73,7 +73,7 @@ img { max-width: 100%; display: block; }
 .section-econ .pub-badge { background: #0054A4; color: #fff; }
 
 /* ISD Georgetown — CSIS 305 C, navy text */
-.section-isd  .pub-badge { background: #3DD5FF; color: #0A2458; }
+.section-isd  .pub-badge { background: ##61DDFF; color: #0A2458; }
 
 /* ISW — navy outline on white */
 .section-isw  .pub-badge { background: transparent; color: #0A2458; box-shadow: inset 0 0 0 1px #0A2458; }
