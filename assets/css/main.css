@@ -60,12 +60,17 @@ img { max-width: 100%; display: block; }
 .pub-year { font-variant-numeric: tabular-nums; color: var(--text-muted); white-space: nowrap; }
 
 /* ---- BADGES ----------------------------------------------------------
-   One color, every outlet and every format. The badge text carries the
-   distinction; color carries none. Per-outlet modifier classes remain in
-   the page markup but match no rule — reintroduce them here if that ever
-   changes. To recolor every badge on the site, edit the two values below. */
+   Color is set by SECTION, not by outlet. Each .writing-list carries a
+   section-* class that colors every badge inside it, so a section reads
+   as one block. All four values sit on the CSIS navy→blue axis.
+   New section: add a section-* rule here and the class on its div. */
 
 .pub-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; background: #0A2458; color: #fff; }
+
+.section-aero .pub-badge { background: #0A2458; }  /* CSIS Pantone 655 C  */
+.section-econ .pub-badge { background: #123168; }
+.section-isd  .pub-badge { background: #0054A4; }  /* CSIS Pantone 2935 C */
+.section-isw  .pub-badge { background: #1A6FC4; }
 
 /* Publication cover thumbnails — replaces the old text badges in the Publications table */
 .pub-cover { width: 72px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 auto; border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
