@@ -1,0 +1,78 @@
+---
+layout: default
+title: Media
+permalink: /media/
+---
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <h1>Media</h1>
+    <p>Conference panels, public engagements, broadcast and podcast appearances, and press commentary.</p>
+  </div>
+</div>
+
+<div class="page-body">
+
+  <h2 class="section-heading">Panels &amp; Public Engagements</h2>
+  <p class="section-note">Invited panels, conference remarks, and public speaking before defense, government, and industry audiences.</p>
+
+  <div class="writing-list">
+
+    <div class="writing-item">
+      <div class="writing-meta">
+        <span class="pub-badge badge-panel">Panel</span>
+        <span class="writing-date">Dec 2026</span>
+        <span class="event-status">Upcoming</span>
+      </div>
+      <div class="writing-content">
+        <h3><a href="https://www.smgconferences.com/defence/northamerica/conference/counter-uas-tech#tab_speakers" target="_blank" rel="noopener">Counter UAS Technology USA</a></h3>
+        <p class="media-venue">SAE Media Group &middot; Washington, DC &middot; November 30 &ndash; December 2, 2026</p>
+        <p class="writing-blurb">Invited panelist at the sixth edition of Counter UAS Technology USA, convening U.S. military, interagency, and allied counter-drone practitioners on authorities, layered defense, and operational integration.</p>
+      </div>
+    </div>
+
+  </div>
+
+{% comment %}
+  ---- Uncomment either section when the first entry lands. ----
+
+  <h2 class="section-heading" style="margin-top: 3.5rem;">Podcasts &amp; Broadcast</h2>
+  <p class="section-note">Long-form interviews and broadcast commentary on defense, aerospace, and geopolitical risk.</p>
+
+  <div class="writing-list">
+
+    <div class="writing-item">
+      <div class="writing-meta">
+        <span class="pub-badge badge-podcast">Podcast</span>
+        <span class="writing-date">MON YEAR</span>
+      </div>
+      <div class="writing-content">
+        <h3><a href="URL" target="_blank" rel="noopener">EPISODE TITLE</a></h3>
+        <p class="media-venue">SHOW NAME &middot; OUTLET</p>
+        <p class="writing-blurb">One-line description.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <h2 class="section-heading" style="margin-top: 3.5rem;">Press &amp; Commentary</h2>
+  <p class="section-note">Quoted analysis and cited work in the press and trade media.</p>
+
+  <div class="writing-list">
+
+    <div class="writing-item">
+      <div class="writing-meta">
+        <span class="pub-badge badge-quoted">Quoted</span>
+        <span class="writing-date">MON YEAR</span>
+      </div>
+      <div class="writing-content">
+        <h3><a href="URL" target="_blank" rel="noopener">ARTICLE HEADLINE</a></h3>
+        <p class="media-venue">OUTLET &middot; by REPORTER</p>
+        <p class="writing-blurb">One-line description of what you were quoted on.</p>
+      </div>
+    </div>
+
+  </div>
+{% endcomment %}
+
+</div>
