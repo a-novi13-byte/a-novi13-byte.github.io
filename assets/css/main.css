@@ -60,32 +60,12 @@ img { max-width: 100%; display: block; }
 .pub-year { font-variant-numeric: tabular-nums; color: var(--text-muted); white-space: nowrap; }
 
 /* ---- BADGES ----------------------------------------------------------
-   One ramp, CSIS navy to CSIS blue, ordered by venue weight.
-   Every fill passes WCAG AA against white text.
-   New outlet: assign it an existing step. Don't add hex values. */
+   One color, every outlet and every format. The badge text carries the
+   distinction; color carries none. Per-outlet modifier classes remain in
+   the page markup but match no rule — reintroduce them here if that ever
+   changes. To recolor every badge on the site, edit the two values below. */
 
-.pub-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; }
-
-/* Step 1 — 14.9:1 */
-.badge-csis, .badge-worldbank { background: #0A2458; color: #fff; }
-
-/* Step 2 — 12.6:1 */
-.badge-isd, .badge-nato, .badge-citadel, .badge-nwc { background: #123168; color: #fff; }
-
-/* Step 3 — 7.5:1 */
-.badge-isw, .badge-milrev, .badge-yjia, .badge-gssr { background: #0054A4; color: #fff; }
-
-/* Step 4 — 5.1:1 */
-.badge-choice, .badge-ijts, .badge-sdstate, .badge-tedstevens { background: #1A6FC4; color: #fff; }
-
-/* Step 5 — outline. inset shadow keeps padding identical to filled badges. */
-.badge-guanxi { background: transparent; color: #0A2458; box-shadow: inset 0 0 0 1px #0A2458; }
-
-/* Media page formats — same ramp, separate page, no collisions. */
-.badge-panel { background: #0A2458; color: #fff; }
-.badge-podcast { background: #0054A4; color: #fff; }
-.badge-broadcast { background: #1A6FC4; color: #fff; }
-.badge-quoted { background: transparent; color: #0A2458; box-shadow: inset 0 0 0 1px #0A2458; }
+.pub-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; background: #0A2458; color: #fff; }
 
 /* Publication cover thumbnails — replaces the old text badges in the Publications table */
 .pub-cover { width: 72px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 auto; border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
@@ -107,7 +87,7 @@ img { max-width: 100%; display: block; }
 
 /* ---- MEDIA PAGE ---- */
 .media-venue { font-size: 0.82rem; color: var(--text-muted); margin: 0.1rem 0 0.45rem; }
-.event-status { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; background: #3DD5FF; color: #0A2458; border-radius: 3px; }
+.event-status { display: inline-block; padding: 0.15rem 0.5rem; font-size: 0.68rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; background: transparent; color: #0A2458; box-shadow: inset 0 0 0 1px #0A2458; border-radius: 3px; }
 
 .cv-actions { margin-bottom: 2rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
 .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.6rem 1.4rem; background: var(--navy); color: #fff; font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; border-radius: 3px; transition: all 0.2s; text-decoration: none; }
