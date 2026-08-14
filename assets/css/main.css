@@ -60,23 +60,35 @@ img { max-width: 100%; display: block; }
 .pub-year { font-variant-numeric: tabular-nums; color: var(--text-muted); white-space: nowrap; }
 
 /* ---- BADGES ----------------------------------------------------------
-   Color is set by SECTION, not by outlet, so each section reads as one
-   block. Four distinct treatments, no repeats, all from the CSIS palette.
-   Cyan fills take NAVY text — white on cyan fails contrast badly. */
+   Media page only. The writing page overrides these to plain text below. */
 
 .pub-badge { display: inline-block; padding: 0.2rem 0.6rem; border-radius: 3px; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; white-space: nowrap; background: #0A2458; color: #fff; }
 
-/* Aerospace & Defense — CSIS 655 C, white text */
-.section-aero .pub-badge { background: #0A2458; color: #fff; }
+/* ---- WRITING PAGE OUTLET LABELS --------------------------------------
+   Outlet as plain text with the date beneath, matching the research page.
+   Badge markup is retained in writing.md; these rules strip the pill.
+   Section classes (.section-aero etc.) no longer carry any color. */
 
-/* Economic Security — CSIS 2935 C, white text */
-.section-econ .pub-badge { background: #0054A4; color: #fff; }
+.writing-list .pub-badge {
+  display: block;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--navy);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.3;
+  white-space: normal;
+}
 
-/* ISD Georgetown — CSIS 305 C, navy text */
-.section-isd  .pub-badge { background: #123168; color: #fff; }
-
-/* ISW — navy outline on white */
-.section-isw  .pub-badge { background: transparent; color: #0A2458; box-shadow: inset 0 0 0 1px #0A2458; }
+/* ISD and ISW are single-outlet column runs — the section heading already
+   names the outlet, so the label is redundant. The 140px grid track holds
+   its width regardless, so titles stay aligned across all four sections. */
+.section-isd .pub-badge,
+.section-isw .pub-badge { display: none; }
 
 /* Publication cover thumbnails — replaces the old text badges in the Publications table */
 .pub-cover { width: 72px; height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0 auto; border: 1px solid rgba(0,0,0,0.08); border-radius: 4px; box-shadow: 0 1px 4px rgba(0,0,0,0.18); }
