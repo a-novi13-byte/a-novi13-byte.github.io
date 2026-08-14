@@ -3,8 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+
+  <!-- Clean browser tabs. To restore the name suffix in search results,
+       change the line below back to:
+       {% raw %}{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}{% endraw %} -->
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+
   <meta name="description" content="{{ site.description }}">
+  <meta name="author" content="Alexei Hoffman">
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  <meta property="og:site_name" content="Alexei Hoffman">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{% if page.title %}{{ page.title }} — Alexei Hoffman{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta name="twitter:card" content="summary">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alexei Hoffman",
+    "url": "{{ '/' | absolute_url }}",
+    "jobTitle": "Research Associate",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Center for Strategic and International Studies"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -21,6 +50,7 @@
         <li><a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
         <li><a href="{{ '/research/' | relative_url }}" {% if page.url == '/research/' %}class="active"{% endif %}>Research</a></li>
         <li><a href="{{ '/writing/' | relative_url }}" {% if page.url == '/writing/' %}class="active"{% endif %}>Writing</a></li>
+        <li><a href="{{ '/media/' | relative_url }}" {% if page.url == '/media/' %}class="active"{% endif %}>Media</a></li>
         <li><a href="{{ '/contact/' | relative_url }}" {% if page.url == '/contact/' %}class="active"{% endif %}>Contact</a></li>
       </ul>
     </div>
