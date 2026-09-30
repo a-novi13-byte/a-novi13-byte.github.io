@@ -4,6 +4,59 @@ title: Policy Writing
 permalink: /writing/
 ---
 
+<style>
+  /* ---- OUTLET LOGOS ---------------------------------------------------------
+     Page-level, same pattern as the hero styles in index.md.
+     Block logos live in /assets/Logos/, trimmed to the edge of the artwork.
+     Item logos: 48px tall at the top of the 140px meta column, above the
+     outlet name. Tiles, seals, and stacked marks keep their own shapes.
+     Section logos (ISD, ISW): each sits in the same 80 x 60px slot, so the
+     two share one center line. From 1280px up the slot hangs left of the
+     heading; below that it stacks above the heading text, where the margin
+     runs out.
+     Phones: item logos lead the outlet-and-date row, and long outlet names
+     wrap beside the logo instead of dropping to their own line. */
+  .writing-meta .pub-logo {
+    height: 48px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    object-position: left bottom;
+    margin-bottom: 0.25rem;
+  }
+  .section-heading.has-logo { position: relative; }
+  .section-logo {
+    display: block;
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    object-position: left bottom;
+    margin-bottom: 0.6rem;
+  }
+  @media (min-width: 1280px) {
+    .section-logo {
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      margin: 0 1rem 0 0;
+      object-position: center;
+    }
+  }
+  @media (max-width: 768px) {
+    .writing-meta:has(.pub-logo) { flex-wrap: nowrap; }
+    .writing-meta .pub-logo {
+      flex-shrink: 0;
+      height: 36px;
+      margin: 0 0.3rem 0 0;
+    }
+    .writing-meta:has(.pub-logo) .writing-date {
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+  }
+</style>
+
 <div class="page-header">
   <div class="page-header-inner">
     <h1>Policy Writing</h1>
@@ -19,7 +72,7 @@ permalink: /writing/
   <div class="writing-list section-aero">
 
     <div class="writing-item">
-      <div class="writing-meta"><span class="pub-badge badge-wotr">War on the Rocks</span><span class="writing-date">Sep 2026</span></div>
+      <div class="writing-meta"><img class="pub-logo" src="{{ '/assets/Logos/logo-wotr.png' | relative_url }}" alt="" loading="lazy"><span class="pub-badge badge-wotr">War on the Rocks</span><span class="writing-date">Sep 2026</span></div>
       <div class="writing-content">
         <h3><a href="https://warontherocks.com/rated-ready-is-not-ready-what-americas-korea-exercises-actually-measure/" target="_blank" rel="noopener">Rated Ready is Not Ready: What America's Korea Exercises Actually Measure</a></h3>
         <p class="writing-blurb">The U.S.-South Korea alliance has never published which units rehearse which wartime missions or who grades them, so no outsider can check whether halving the 2026 Ulchi Freedom Shield hurt readiness.</p>
@@ -27,7 +80,7 @@ permalink: /writing/
     </div>
 
     <div class="writing-item">
-      <div class="writing-meta"><span class="pub-badge badge-gti">Global Taiwan Brief</span><span class="writing-date">Sep 2026</span></div>
+      <div class="writing-meta"><img class="pub-logo" src="{{ '/assets/Logos/logo-gti.png' | relative_url }}" alt="" loading="lazy"><span class="pub-badge badge-gti">Global Taiwan Brief</span><span class="writing-date">Sep 2026</span></div>
       <div class="writing-content">
         <h3><a href="https://globaltaiwan.org/2026/09/taiwan-shift-course-drone-production/" target="_blank" rel="noopener">Taiwan Must Shift Course in its Domestic Drone Warfare Production Strategy</a></h3>
         <p class="writing-blurb">Taiwan builds the short-range drones for a beach fight and imports the long-range maritime strike tier, while its air defense funds the exquisite layer and skips counter-swarm.</p>
@@ -35,7 +88,7 @@ permalink: /writing/
     </div>
 
     <div class="writing-item">
-      <div class="writing-meta"><span class="pub-badge badge-mwi">Modern War Institute</span><span class="writing-date">Aug 2026</span></div>
+      <div class="writing-meta"><img class="pub-logo" src="{{ '/assets/Logos/logo-mwi.png' | relative_url }}" alt="" loading="lazy"><span class="pub-badge badge-mwi">Modern War Institute</span><span class="writing-date">Aug 2026</span></div>
       <div class="writing-content">
         <h3><a href="https://mwi.westpoint.edu/the-unmanned-fires-observer-the-armys-drone-age-doctrine-rewrite-is-skipping-a-crucial-part/" target="_blank" rel="noopener">The Unmanned Fires Observer: The Army's Drone-Age Doctrine Rewrite Is Skipping a Crucial Part</a></h3>
         <p class="writing-blurb">The Army's drone doctrine overhaul leaves the fire support manuals untouched, and no publication names the soldier who turns drone video into a cleared fire mission.</p>
@@ -43,7 +96,7 @@ permalink: /writing/
     </div>
 
     <div class="writing-item">
-      <div class="writing-meta"><span class="pub-badge badge-csis">CSIS</span><span class="writing-date">Jul 2026</span></div>
+      <div class="writing-meta"><img class="pub-logo" src="{{ '/assets/Logos/logo-csis.png' | relative_url }}" alt="" loading="lazy"><span class="pub-badge badge-csis">Center for Strategic and International Studies</span><span class="writing-date">Jul 2026</span></div>
       <div class="writing-content">
         <h3><a href="https://www.csis.org/analysis/playbook-or-rental-us-counter-drone-defense-and-2026-world-cup" target="_blank" rel="noopener">Playbook or Rental? U.S. Counter-Drone Defense and the 2026 World Cup</a></h3>
         <p class="writing-blurb">How the 2026 World Cup is testing U.S. counter-drone authorities, command architecture, and procurement at continental scale.</p>
@@ -58,7 +111,7 @@ permalink: /writing/
   <div class="writing-list section-econ">
 
     <div class="writing-item">
-      <div class="writing-meta"><span class="pub-badge badge-guanxi">European Guanxi</span><span class="writing-date">Jun 2026</span></div>
+      <div class="writing-meta"><img class="pub-logo" src="{{ '/assets/Logos/logo-guanxi.png' | relative_url }}" alt="" loading="lazy"><span class="pub-badge badge-guanxi">European Guanxi</span><span class="writing-date">Jun 2026</span></div>
       <div class="writing-content">
         <h3><a href="https://www.europeanguanxi.com/post/between-brussels-and-beijing-central-asia-and-the-contest-over-rules-routes-and-resources" target="_blank" rel="noopener">Between Brussels and Beijing: Central Asia and the Contest Over Rules, Routes, and Resources</a></h3>
         <p class="writing-blurb">How Brussels and Beijing's competing frameworks for investment, critical minerals, and carbon regulation are reshaping Central Asia.</p>
@@ -66,7 +119,7 @@ permalink: /writing/
     </div>
 
     <div class="writing-item">
-      <div class="writing-meta"><span class="pub-badge badge-choice">CHOICE</span><span class="writing-date">Mar 2026</span></div>
+      <div class="writing-meta"><img class="pub-logo" src="{{ '/assets/Logos/logo-choice.png' | relative_url }}" alt="" loading="lazy"><span class="pub-badge badge-choice">China Observers in Central and Eastern Europe</span><span class="writing-date">Mar 2026</span></div>
       <div class="writing-content">
         <h3><a href="https://chinaobservers.eu/beijings-balkan-steel-trap-cbam-and-the-politics-of-decarbonization-in-serbia/" target="_blank" rel="noopener">Beijing's Balkan Steel Trap: CBAM and the Politics of Decarbonization in Serbia</a></h3>
         <p class="writing-blurb">How Chinese industrial overcapacity and EU carbon border policy collide in Southeastern Europe.</p>
@@ -74,7 +127,7 @@ permalink: /writing/
     </div>
 
     <div class="writing-item">
-      <div class="writing-meta"><span class="pub-badge badge-csis">CSIS</span><span class="writing-date">Feb 2026</span></div>
+      <div class="writing-meta"><img class="pub-logo" src="{{ '/assets/Logos/logo-ngnn.png' | relative_url }}" alt="" loading="lazy"><span class="pub-badge badge-csis">Center for Strategic and International Studies</span><span class="writing-date">Feb 2026</span></div>
       <div class="writing-content">
         <h3><a href="https://nuclearnetwork.csis.org/kazakhstan-chose-russia-and-china-for-its-reactors-washington-wasnt-even-in-the-room/" target="_blank" rel="noopener">Kazakhstan Chose Russia and China for Its Reactors. Washington Wasn't Even in the Room.</a></h3>
         <p class="writing-blurb">Great-power competition over nuclear energy infrastructure in Central Asia and the strategic consequences for Washington.</p>
@@ -83,7 +136,7 @@ permalink: /writing/
 
   </div>
 
-  <h2 class="section-heading" style="margin-top: 3.5rem;">Georgetown Institute for the Study of Diplomacy — The Diplomatic Pouch</h2>
+  <h2 class="section-heading has-logo" style="margin-top: 3.5rem;"><img class="section-logo" src="{{ '/assets/Logos/logo-isd.png' | relative_url }}" alt="" loading="lazy">Georgetown Institute for the Study of Diplomacy — The Diplomatic Pouch</h2>
   <p class="section-note">Policy analysis published through Georgetown's Institute for the Study of Diplomacy, exploring how legal authorities, economic leverage, and resource competition shape U.S. security policy and strategic decision-making.</p>
 
   <div class="writing-list section-isd">
@@ -146,7 +199,7 @@ permalink: /writing/
 
   </div>
 
-  <h2 class="section-heading" style="margin-top: 3.5rem;">Institute for the Study of War — China-Taiwan Weekly Updates</h2>
+  <h2 class="section-heading has-logo" style="margin-top: 3.5rem;"><img class="section-logo" src="{{ '/assets/Logos/logo-isw.png' | relative_url }}" alt="" loading="lazy">Institute for the Study of War — China-Taiwan Weekly Updates</h2>
   <p class="section-note">Selected analytical contributions to ISW's China-Taiwan Weekly Update, a product distributed to government and military consumers covering PLA activity, CCP coercion campaigns, and Indo-Pacific security developments.</p>
 
   <div class="writing-list section-isw">
