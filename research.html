@@ -5,44 +5,38 @@ permalink: /research/
 ---
 
 <style>
-  /* ---- PAGE COLUMN ------------------------------------------------------------
-     Everything below the header sits in one centered 720px column; the 4rem
-     covers the page's own side padding. Change 720px to widen or narrow the
-     whole page at once. */
-  .research-body { max-width: calc(720px + 4rem); }
-
-  /* ---- PUBLICATION LIST -------------------------------------------------------
-     Modeled on the CSIS author-page list: title, an optional summary, a small
-     meta line with venue and year, and the cover on the right. Award notes sit
-     above the title as a small label. Covers live in /assets/Covers/, 3:4.
-     To resize the cover, change 120px in both .pub-row rules below. */
-  .pub-list { margin-top: 1.5rem; border-bottom: 1px solid var(--border); }
-  .pub-row { display: grid; grid-template-columns: minmax(0, 1fr) 120px; gap: 1.75rem; align-items: start; padding: 1.3rem 0; border-top: 1px solid var(--border); }
-  .pub-row .pub-cover { width: 120px; margin: 0; }
+  /* ---- CARD GRID --------------------------------------------------------------
+     Same pattern as the Writing page: cover on top, then an optional award
+     label, the title, an optional summary, and a small meta line with venue
+     and year. Conference cards use the same grid without a cover.
+     The minimum card width sets how many columns fit at full width: 300px
+     gives three, 220px four. Covers live in /assets/Covers/, 3:4; change
+     120px in .pub-card .pub-cover to resize them. */
+  .pub-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2.25rem 1.75rem; margin-top: 1.5rem; }
+  .pub-card { display: flex; flex-direction: column; gap: 0.9rem; min-width: 0; padding-top: 1.1rem; border-top: 1px solid var(--border); }
+  .pub-card .pub-cover { width: 120px; margin: 0; }
+  .conf-card { display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; padding-top: 1.1rem; border-top: 1px solid var(--border); }
   .pub-kicker { font-size: 0.74rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 0.4rem; }
   .pub-summary { font-size: 0.95rem; line-height: 1.6; color: var(--text); margin-top: 0.5rem; }
 
-  /* ---- CONFERENCE GRID --------------------------------------------------------
-     Same card pattern as the Media page, modeled on CSIS "In the News": title,
-     then a small meta line with conference, venue, and date. Inside the 720px
-     column, a 300px minimum card width gives two columns and 220px gives
-     three. Narrow screens drop to one column. */
-  .conf-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem 1.75rem; margin-top: 1.5rem; }
-  .conf-card { display: flex; flex-direction: column; gap: 0.5rem; min-width: 0; padding-top: 1rem; border-top: 1px solid var(--border); }
-
   /* ---- SHARED: titles and meta lines ---- */
-  .pub-row h3, .conf-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; line-height: 1.28; color: var(--navy); }
-  .pub-row h3 a, .conf-card h3 a { color: var(--navy); }
-  .pub-row h3 a:hover, .conf-card h3 a:hover { color: var(--accent-dark); }
+  .pub-card h3, .conf-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; line-height: 1.28; color: var(--navy); }
+  .pub-card h3 a, .conf-card h3 a { color: var(--navy); }
+  .pub-card h3 a:hover, .conf-card h3 a:hover { color: var(--accent-dark); }
   .pub-meta { font-size: 0.86rem; font-weight: 400; line-height: 1.55; color: var(--text-muted); }
-  .pub-row .pub-meta { margin-top: 0.5rem; }
+  .pub-card .pub-meta { margin-top: 0.5rem; }
   .pub-meta strong { font-weight: 500; color: var(--navy); }
   .pub-date { white-space: nowrap; }
 
+  /* Phones and small tablets: one column, and each publication card turns
+     into a row with the cover on the right, so the page stays short. */
   @media (max-width: 768px) {
-    .pub-row { grid-template-columns: minmax(0, 1fr) 88px; gap: 1.1rem; }
-    .pub-row .pub-cover { width: 88px; }
-    .pub-row h3, .conf-card h3 { font-size: 1.18rem; }
+    .pub-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .pub-card, .conf-card { padding: 1.2rem 0; }
+    .pub-card { display: grid; grid-template-columns: minmax(0, 1fr) 88px; gap: 1.1rem; align-items: start; }
+    .pub-card .pub-cover { grid-column: 2; grid-row: 1; width: 88px; }
+    .pub-card > div { grid-column: 1; grid-row: 1; }
+    .pub-card h3, .conf-card h3 { font-size: 1.18rem; }
   }
 </style>
 
@@ -53,126 +47,126 @@ permalink: /research/
   </div>
 </div>
 
-<div class="page-body research-body">
+<div class="page-body">
 
   <h2 class="section-heading">Book Chapters</h2>
 
-  <div class="pub-list">
-    <article class="pub-row">
+  <div class="pub-grid">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-manyfaces.jpg' | relative_url }}" alt="The Many Faces of War and Peace cover" loading="lazy">
       <div>
         <h3><a href="https://www.usmcu.edu/Outreach/Marine-Corps-University-Press/Books-by-topic/MCUP-Titles-A-Z/The-Many-Faces-of-War-and-Peace/" target="_blank" rel="noopener">The Sun Never Sets: Defense, Economics, and the Fate of Modern Empires</a></h3>
         <p class="pub-meta">Chapter 14 in <strong><em>The Many Faces of War and Peace: A Survey of War Throughout the Ages</em></strong> &middot; Marine Corps University Press &middot; edited by Graham Wrightson and Jerry W. Jones <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-manyfaces.jpg' | relative_url }}" alt="The Many Faces of War and Peace cover" loading="lazy">
     </article>
   </div>
 
   <h2 class="section-heading" style="margin-top: 3.5rem;">Publications</h2>
 
-  <div class="pub-list">
-    <article class="pub-row">
+  <div class="pub-grid">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-gjaa.jpg' | relative_url }}" alt="Georgetown Journal of Asian Affairs, Volume 11 cover" loading="lazy">
       <div>
         <h3><a href="https://repository.digital.georgetown.edu/handle/10822/1110644" target="_blank" rel="noopener">The Sovereignty Premium: Japan's Defense Industrial Transaction in a Time of Transition</a></h3>
         <p class="pub-meta"><strong>Georgetown Journal of Asian Affairs</strong>, Vol. 11 <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-gjaa.jpg' | relative_url }}" alt="Georgetown Journal of Asian Affairs, Volume 11 cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-yjia.jpg' | relative_url }}" alt="Yale Journal of International Affairs cover" loading="lazy">
       <div>
         <h3><a href="https://www.yalejournal.org/publications/assurances-are-not-guarantees-budapests-lesson-for-nonproliferation-h2h5x" target="_blank" rel="noopener">Assurances Are Not Guarantees: Budapest's Lesson for Nonproliferation</a></h3>
         <p class="pub-meta"><strong>Yale Journal of International Affairs</strong>, 21(2) <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-yjia.jpg' | relative_url }}" alt="Yale Journal of International Affairs cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-jas.jpg' | relative_url }}" alt="Journal of Arctic Security cover" loading="lazy">
       <div>
         <h3><a href="https://tedstevensarcticcenter.org/journal-of-arctic-security/" target="_blank" rel="noopener">Pacing the Polar Shift: Reshaping US-NATO Strategy in a Contested Arctic</a></h3>
         <p class="pub-meta"><strong>Journal of Arctic Security</strong>, Vol. 3 &middot; with Samuel R. Goldenstein <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-jas.jpg' | relative_url }}" alt="Journal of Arctic Security cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-gssr-v13.jpg' | relative_url }}" alt="Georgetown Security Studies Review 13(2) cover" loading="lazy">
       <div>
         <h3><a href="https://gssr.georgetown.edu/the-review/gssr-volume-13-issue-2/" target="_blank" rel="noopener">Controls at the Gate: Do People's Republic of China Export Licenses Delay U.S. Defense Deliveries?</a></h3>
         <p class="pub-meta"><strong>Georgetown Security Studies Review</strong>, 13(2) <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-gssr-v13.jpg' | relative_url }}" alt="Georgetown Security Studies Review 13(2) cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-natsa.jpg' | relative_url }}" alt="NATSA 2026 Essay Award cover" loading="lazy">
       <div>
         <p class="pub-kicker">Honorable Mention &mdash; 2026 Graduate Student &amp; Emerging Scholar Essay Award</p>
         <h3><a href="https://www.facebook.com/NATSAthebest/photos/announcementthe-north-american-taiwan-studies-association-natsa-is-pleased-to-an/1388526646412186/" target="_blank" rel="noopener">More Dependent, Less Deterred: Taiwan's Silicon Shield in the New Geoeconomic Order</a></h3>
         <p class="pub-meta"><strong>North American Taiwan Studies Association</strong> <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-natsa.jpg' | relative_url }}" alt="NATSA 2026 Essay Award cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-gssr-v12.jpg' | relative_url }}" alt="Georgetown Security Studies Review 12(1) cover" loading="lazy">
       <div>
         <h3><a href="https://repository.digital.georgetown.edu/handle/10822/1088845" target="_blank" rel="noopener">Constructive Competition: A Strategic Framework for U.S. Engagement and Policy Alternatives to the Belt and Road Initiative</a></h3>
         <p class="pub-meta"><strong>Georgetown Security Studies Review</strong>, 12(1) &middot; with Ian Jones <span class="pub-date">&mdash; 2024</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-gssr-v12.jpg' | relative_url }}" alt="Georgetown Security Studies Review 12(1) cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-military-review.jpg' | relative_url }}" alt="Military Review (March–April 2022) cover" loading="lazy">
       <div>
         <p class="pub-kicker">Winner, 3rd Place &mdash; 2021 Gen. William E. DePuy Writing Contest</p>
         <h3><a href="https://www.armyupress.army.mil/Journals/Military-Review/English-Edition-Archives/March-April-2022/Hoffman/" target="_blank" rel="noopener">Decentralized Deterrence: Reinvigorating the Army's Deterrence Impact in the Face of a Modernized People's Liberation Army</a></h3>
         <p class="pub-meta"><strong>Military Review</strong>, 102(2) <span class="pub-date">&mdash; 2022</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-military-review.jpg' | relative_url }}" alt="Military Review (March–April 2022) cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-goldstar.jpg' | relative_url }}" alt="The Gold Star Journal cover" loading="lazy">
       <div>
         <p class="pub-kicker">Winner, Best Graduate Submission Award</p>
         <h3><a href="https://www.citadel.edu/goldstar/wp-content/uploads/sites/97/2021gsjedition.pdf" target="_blank" rel="noopener">Engaged Containment: A Viable Solution to the North Korea Problem</a></h3>
         <p class="pub-meta"><strong>The Gold Star Journal</strong> <span class="pub-date">&mdash; 2021</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-goldstar.jpg' | relative_url }}" alt="The Gold Star Journal cover" loading="lazy">
     </article>
 {% comment %}
-  ---- Row template: paste at the top of its list, newest first. The award
+  ---- Card template: paste at the top of its grid, newest first. The award
        label and summary lines are optional; delete either if unused. ----
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-FILE.jpg' | relative_url }}" alt="VENUE cover" loading="lazy">
       <div>
         <p class="pub-kicker">AWARD NOTE</p>
         <h3><a href="URL" target="_blank" rel="noopener">TITLE</a></h3>
         <p class="pub-summary">Two- to three-line summary.</p>
         <p class="pub-meta"><strong>VENUE</strong>, VOLUME(ISSUE) &middot; with COAUTHOR <span class="pub-date">&mdash; YEAR</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-FILE.jpg' | relative_url }}" alt="VENUE cover" loading="lazy">
     </article>
 {% endcomment %}
   </div>
 
   <h2 class="section-heading" style="margin-top: 3.5rem;">Reports &amp; Theses</h2>
 
-  <div class="pub-list">
-    <article class="pub-row">
+  <div class="pub-grid">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-isd-individual.jpg' | relative_url }}" alt="Price Caps to Peace Talks — ISD individual capstone report cover" loading="lazy">
       <div>
         <h3><a href="{{ '/assets/Media/hoffman-price-caps-to-peace-talks.pdf' | relative_url }}" target="_blank" rel="noopener">Price Caps to Peace Talks: Energy-Market Statecraft and the Path to a Russia-Ukraine Settlement</a></h3>
         <p class="pub-meta">Individual capstone report &middot; <strong>Institute for the Study of Diplomacy</strong>, Georgetown University <span class="pub-date">&mdash; Spring 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-isd-individual.jpg' | relative_url }}" alt="Price Caps to Peace Talks — ISD individual capstone report cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-isd.jpg' | relative_url }}" alt="Tipping the Scales — ISD Capstone Report cover" loading="lazy">
       <div>
         <h3><a href="https://isd.georgetown.edu/capstone-reports/tipping-the-scales-building-u-s-leverage-for-a-durable-settlement-in-ukraine-2025-2026/" target="_blank" rel="noopener">Tipping the Scales: Building U.S. Leverage for a Durable Settlement in Ukraine (2025-2026)</a></h3>
         <p class="pub-meta"><strong>Institute for the Study of Diplomacy</strong>, Georgetown University &middot; with the Spring 2026 ISD Capstone team <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-isd.jpg' | relative_url }}" alt="Tipping the Scales — ISD Capstone Report cover" loading="lazy">
     </article>
-    <article class="pub-row">
+    <article class="pub-card">
+      <img class="pub-cover" src="{{ '/assets/Covers/cover-thesis.jpg' | relative_url }}" alt="Flows Under Fire thesis cover" loading="lazy">
       <div>
         <h3><a href="https://www.proquest.com/docview/3382215974" target="_blank" rel="noopener">Flows Under Fire: China's Gas Import Mix and Supplier Risk Since the Ukraine War</a></h3>
         <p class="pub-meta">M.A. thesis, Asian Studies, Walsh School of Foreign Service &middot; <strong>Georgetown University</strong> &middot; ProQuest Dissertations &amp; Theses, 32581528 <span class="pub-date">&mdash; 2026</span></p>
       </div>
-      <img class="pub-cover" src="{{ '/assets/Covers/cover-thesis.jpg' | relative_url }}" alt="Flows Under Fire thesis cover" loading="lazy">
     </article>
   </div>
 
   <h2 class="section-heading" style="margin-top: 3.5rem;">Conference Presentations</h2>
 
-  <div class="conf-grid">
+  <div class="pub-grid">
     <article class="conf-card">
       <h3><a href="https://www.worldbank.org/en/events/2026/04/29/measuredev-conference-2026" target="_blank" rel="noopener">Reproducibility and Geographic Transfer of Satellite-Based Electrification Predictions: Testing High-Resolution Electricity Access Models Across Africa and Asia</a></h3>
       <p class="pub-meta"><strong>Measuring Development Conference 2026</strong> &middot; World Bank &amp; CEGA <span class="pub-date">&mdash; April 2026</span></p>
